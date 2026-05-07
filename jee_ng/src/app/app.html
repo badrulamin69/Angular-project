@@ -1,2 +1,15 @@
+<app-navbar></app-navbar>
 
-<router-outlet />
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+<app-footer></app-footer>
+
+<!-- Global Scroll To Top Button -->
+<div id="scrollTop" [class.visible]="showScrollTop" (click)="scrollToTop()">
+  <i class="fa fa-arrow-up"></i>
+</div>
+
+

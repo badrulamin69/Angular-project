@@ -1,0 +1,30 @@
+<!-- ✅ navbar.component.html -->
+<nav id="navbar" [class.scrolled]="isScrolled">
+  <a href="#hero" class="nav-brand">
+    <div class="nav-logo">E</div>
+    <div class="nav-name">
+      EduPeak Academy
+      <span>Smart Learning Management</span>
+    </div>
+  </a>
+
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li><a href="#hero"        (click)="closeMenu()" [class.active]="activeSection==='hero'">Home</a></li>
+    <li><a href="about"       (click)="closeMenu()" [class.active]="activeSection==='about'">About</a></li>
+    <li><a href="#courses"     (click)="closeMenu()" [class.active]="activeSection==='courses'">Courses</a></li>
+    <li><a href="#teachers"    (click)="closeMenu()" [class.active]="activeSection==='teachers'">Teachers</a></li>
+    <li><a href="#admission"   (click)="closeMenu()" [class.active]="activeSection==='admission'">Admissions</a></li>
+    <li><a href="#contact"     (click)="closeMenu()" [class.active]="activeSection==='contact'">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="#" class="btn-login">
+      <i class="fa fa-right-to-bracket"></i> Login
+    </a>
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

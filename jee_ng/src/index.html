@@ -15,10 +15,106 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+  
 </head>
 
 <body>
   <app-root></app-root>
+
+  <!-- SCROLL TO TOP -->
+  <div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-arrow-up"></i></div>
+  <script>
+    // Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hide');
+      }, 1800);
+    });
+
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+        scrollBtn.classList.add('visible');
+      } else {
+        navbar.classList.remove('scrolled');
+        scrollBtn.classList.remove('visible');
+      }
+      // Active nav links
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+      });
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Animated counters
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
+      }, 16);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+    // Enroll button click
+    document.querySelectorAll('.btn-enroll').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Form send
+    document.querySelector('.btn-send').addEventListener('click', (e) => {
+      e.preventDefault();
+      const btn = document.querySelector('.btn-send');
+      btn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
+      btn.style.background = 'linear-gradient(135deg,#0ea5a0,#1a3c6e)';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
+        btn.style.background = '';
+      }, 3000);
+    });
+  </script>
 </body>
+
+
+
 
 </html>
