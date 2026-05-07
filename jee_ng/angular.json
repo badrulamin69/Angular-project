@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "jee_69_angular": {
+    "jee_ng": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -51,8 +51,13 @@
             ],
             "styles": [
               "src/styles.css",
-              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
+
+
           },
           "configurations": {
             "production": {
@@ -82,10 +87,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "jee_69_angular:build:production"
+              "buildTarget": "jee_ng:build:production"
             },
             "development": {
-              "buildTarget": "jee_69_angular:build:development"
+              "buildTarget": "jee_ng:build:development"
             }
           },
           "defaultConfiguration": "development"
