@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+/* ✅ app.component.css — Global Styles */
+
+/* ---------- CSS Variables ---------- */
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 :root {
   --primary: #1a3c6e;
   --primary-light: #2557a7;
@@ -16,12 +22,22 @@
   --grad1: linear-gradient(135deg, #1a3c6e 0%, #2557a7 50%, #0ea5a0 100%);
   --grad2: linear-gradient(135deg, #f4a724 0%, #e8504a 100%);
   --grad3: linear-gradient(135deg, #0ea5a0 0%, #2557a7 100%);
+<<<<<<< HEAD
   --shadow-sm: 0 2px 8px rgba(26, 60, 110, 0.08);
   --shadow-md: 0 8px 32px rgba(26, 60, 110, 0.12);
   --shadow-lg: 0 20px 60px rgba(26, 60, 110, 0.16);
   --radius: 12px;
   --radius-lg: 20px;
 }
+=======
+  --shadow-sm: 0 2px 8px rgba(26,60,110,0.08);
+  --shadow-md: 0 8px 32px rgba(26,60,110,0.12);
+  --shadow-lg: 0 20px 60px rgba(26,60,110,0.16);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 *,
 *::before,
 *::after {
@@ -29,9 +45,17 @@
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD
 html {
   scroll-behavior: smooth;
 }
+=======
+
+html {
+  scroll-behavior: smooth;
+}
+
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
@@ -40,6 +64,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
+<<<<<<< HEAD
 h1,
 h2,
 h3,
@@ -1300,6 +1325,18 @@ footer {
 }
 
 /* ── SCROLL TO TOP ── */
+=======
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Sora', sans-serif;
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* ---------- Scroll To Top Button ---------- */
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 #scrollTop {
   position: fixed;
   bottom: 28px;
@@ -1316,20 +1353,33 @@ footer {
   font-size: 18px;
   cursor: pointer;
   box-shadow: var(--shadow-md);
+<<<<<<< HEAD
   transition:
     transform 0.2s,
     opacity 0.3s;
   opacity: 0;
   pointer-events: none;
 }
+=======
+  transition: transform 0.2s, opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 #scrollTop.visible {
   opacity: 1;
   pointer-events: all;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 #scrollTop:hover {
   transform: translateY(-2px);
 }
 
+<<<<<<< HEAD
 /* ── ANIMATIONS ── */
 .fade-in {
   opacity: 0;
@@ -1338,10 +1388,60 @@ footer {
     opacity 0.6s ease,
     transform 0.6s ease;
 }
+=======
+/* ---------- Shared Utility Classes ---------- */
+.section-tag {
+  display: inline-block;
+  background: rgba(37, 87, 167, 0.08);
+  color: var(--primary-light);
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.section-sub {
+  color: var(--text2);
+  font-size: 17px;
+  max-width: 560px;
+}
+
+.section-head {
+  margin-bottom: 56px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .section-sub {
+  margin: 0 auto;
+}
+
+/* ---------- Fade-in Animation ---------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
+<<<<<<< HEAD
 .fade-in-delay-1 {
   transition-delay: 0.1s;
 }
@@ -1418,3 +1518,9 @@ footer {
   }
 }
 
+=======
+
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+>>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
