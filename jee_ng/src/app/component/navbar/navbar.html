@@ -3,24 +3,51 @@
   <a href="#hero" class="nav-brand">
     <div class="nav-logo">E</div>
     <div class="nav-name">
-      EduPeak Academy
+      Academy Management System
       <span>Smart Learning Management</span>
     </div>
   </a>
 
   <ul class="nav-links" [class.open]="menuOpen">
-    <li><a href="#hero"        (click)="closeMenu()" [class.active]="activeSection==='hero'">Home</a></li>
-    <li><a href="about"       (click)="closeMenu()" [class.active]="activeSection==='about'">About</a></li>
-    <li><a href="#courses"     (click)="closeMenu()" [class.active]="activeSection==='courses'">Courses</a></li>
-    <li><a href="#teachers"    (click)="closeMenu()" [class.active]="activeSection==='teachers'">Teachers</a></li>
-    <li><a href="#admission"   (click)="closeMenu()" [class.active]="activeSection==='admission'">Admissions</a></li>
-    <li><a href="#contact"     (click)="closeMenu()" [class.active]="activeSection==='contact'">Contact</a></li>
+    <li><a routerLink="/" (click)="closeMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+    <li><a routerLink="/admission" (click)="closeMenu()" routerLinkActive="active">Admissions</a></li>
+    
+    <ng-container *ngIf="user">
+      <li><a routerLink="/dashboard" (click)="closeMenu()" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/courses" (click)="closeMenu()" routerLinkActive="active">Courses</a></li>
+      <li><a routerLink="/live-classes" (click)="closeMenu()" routerLinkActive="active">Live Classes</a></li>
+      
+      <!-- Student & Teacher Specific Links -->
+      <li *ngIf="user.role === 'Student' || user.role === 'Teacher'">
+        <a routerLink="/exams" (click)="closeMenu()" routerLinkActive="active">Exams</a>
+      </li>
+      <li *ngIf="user.role === 'Student' || user.role === 'Teacher'">
+        <a routerLink="/talent-hunt" (click)="closeMenu()" routerLinkActive="active">Talent Hunt</a>
+      </li>
+      
+      <li><a routerLink="/notices" (click)="closeMenu()" routerLinkActive="active">Notices</a></li>
+    </ng-container>
   </ul>
 
   <div class="nav-actions">
-    <a href="#" class="btn-login">
-      <i class="fa fa-right-to-bracket"></i> Login
-    </a>
+    <ng-container *ngIf="!user">
+      <a routerLink="/login" class="btn-login" (click)="closeMenu()">
+        <i class="fa fa-right-to-bracket"></i> Login
+      </a>
+    </ng-container>
+    
+    <ng-container *ngIf="user">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="text-align: right; line-height: 1.2;">
+          <div style="font-size: 13px; font-weight: 700; color: var(--primary);">{{ user.name }}</div>
+          <div style="font-size: 11px; color: var(--text3);">{{ user.role }}</div>
+        </div>
+        <button (click)="logout()" class="btn-outline" style="padding: 6px 12px; font-size: 13px; color: var(--coral); border-color: var(--coral);">
+          <i class="fa fa-power-off"></i>
+        </button>
+      </div>
+    </ng-container>
+
     <div class="hamburger" (click)="toggleMenu()">
       <span></span>
       <span></span>

@@ -1,17 +1,28 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar implements OnInit {
-
+  authService = inject(AuthService);
+  router = inject(Router);
+  user: any = null;
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.authService.currentUser$.subscribe(u => {
+      this.user = u;
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.closeMenu();
   }
 
 

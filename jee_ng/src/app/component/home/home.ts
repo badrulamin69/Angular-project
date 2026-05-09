@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -58,12 +59,12 @@ export class Home {
 
   // ── Testimonials ─────────────────────────────────────────
   testimonials = [
-    { initials: 'ZA', name: 'Zia Ahmed',     role: 'Parent — Grade 10 Student',   bg: '#e8f0fd', color: '#2557a7', text: 'EduPeak completely transformed my son\'s academic trajectory. The teachers genuinely care about every student\'s success, and the digital management system keeps us informed in real time.' },
+    { initials: 'ZA', name: 'Zia Ahmed',     role: 'Parent — Grade 10 Student',   bg: '#e8f0fd', color: '#2557a7', text: 'Academy Management System completely transformed my son\'s academic trajectory. The teachers genuinely care about every student\'s success, and the digital management system keeps us informed in real time.' },
     { initials: 'RH', name: 'Riya Hossain',  role: 'Student — CS Batch 2024',     bg: '#e1f5ee', color: '#0a7c5a', text: 'The Computer Science program here is exceptional. I landed a software engineering internship before even graduating thanks to the industry-relevant curriculum and supportive mentors.' },
     { initials: 'SM', name: 'Selina Mahmud', role: 'Parent — Grade 8 Student',    bg: '#fff3d6', color: '#b06000', text: 'As a parent, the transparency this academy provides is unmatched. Attendance, grades, fees — everything is accessible from my phone. I always feel connected to my daughter\'s education.' },
     { initials: 'TK', name: 'Tanvir Khan',   role: 'Alumni — BUET Scholar 2023',  bg: '#f0eefd', color: '#5340b5', text: 'I scored a full scholarship to BUET after studying science here. The faculty\'s dedication and the disciplined academic environment gave me the foundation to achieve my dreams.' },
-    { initials: 'NB', name: 'Nafisa Begum',  role: 'Student — French Advanced',   bg: '#fceaf0', color: '#a32d5c', text: 'The language courses at EduPeak are phenomenal! In just 8 months I became conversational in French. The teachers are native-level speakers who make every class engaging and practical.' },
-    { initials: 'KI', name: 'Kabir Islam',   role: 'Parent — Commerce Department',bg: '#e8f8fc', color: '#0e7490', text: 'The commerce program prepared my daughter with real-world business skills. She started her own small business at age 17! EduPeak doesn\'t just teach — they inspire entrepreneurial thinking.' },
+    { initials: 'NB', name: 'Nafisa Begum',  role: 'Student — French Advanced',   bg: '#fceaf0', color: '#a32d5c', text: 'The language courses at Academy Management System are phenomenal! In just 8 months I became conversational in French. The teachers are native-level speakers who make every class engaging and practical.' },
+    { initials: 'KI', name: 'Kabir Islam',   role: 'Parent — Commerce Department',bg: '#e8f8fc', color: '#0e7490', text: 'The commerce program prepared my daughter with real-world business skills. She started her own small business at age 17! Academy Management System doesn\'t just teach — they inspire entrepreneurial thinking.' },
   ];
 
   // ── Contact Items ─────────────────────────────────────────
@@ -79,7 +80,13 @@ export class Home {
   private statObserver!: IntersectionObserver;
   private statsAnimated = false;
 
+  private apiService = inject(ApiService);
+
   ngOnInit(): void {
+    this.apiService.getStudents().subscribe(res => console.log('Students:', res));
+    this.apiService.getTeachers().subscribe(res => console.log('Teachers:', res));
+    this.apiService.getCourses().subscribe(res => console.log('Courses:', res));
+
     // Hide loader after 1.8s
     setTimeout(() => (this.loaderHidden = true), 1800);
 

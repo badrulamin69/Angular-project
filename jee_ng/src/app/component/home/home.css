@@ -59,44 +59,6 @@
   .center { text-align: center; }
   .center .section-sub { margin: 0 auto; }
 
-<<<<<<< HEAD
-/* ── NAVBAR ── */
-
-.btn-login {
-  background: var(--grad1);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 22px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-  text-decoration: none;
-}
-.btn-login:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 87, 167, 0.3);
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 6px;
-}
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 99px;
-  transition: 0.3s;
-}
-=======
   /* ── ABOUT ── */
   #about { background: var(--white); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -134,7 +96,6 @@
   .mv-card.mission h4 { color: var(--primary-light); }
   .mv-card.vision h4 { color: var(--teal); }
   .mv-card p { font-size: 13px; color: var(--text2); margin: 0; }
->>>>>>> 9a88bf371d4cde4d72f0e19bfad1aa712404e560
 
   /* ── FEATURES ── */
   #features { background: var(--bg); }

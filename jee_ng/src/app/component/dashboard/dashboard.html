@@ -1,0 +1,115 @@
+<section style="min-height: 100vh; padding-top: 120px; background: var(--bg);" *ngIf="user">
+  <div class="section-head fade-in visible">
+    <div class="section-tag">{{ user.role }} Dashboard</div>
+    <h2 class="section-title">Welcome, {{ user.name }}!</h2>
+    <p class="section-sub">Here is your customized overview based on your role.</p>
+  </div>
+  
+  <!-- ==================== STUDENT DASHBOARD ==================== -->
+  <ng-container *ngIf="user.role === 'Student'">
+    <div class="stats-grid fade-in visible" style="margin-bottom: 40px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="stat-card" style="background: var(--grad1); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-book"></i></div>
+        <div class="stat-num">4</div>
+        <div class="stat-label" style="color: white;">Active Courses</div>
+      </div>
+      <div class="stat-card" style="background: linear-gradient(135deg, #0a7c5a, #5ecdc9); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-check-circle"></i></div>
+        <div class="stat-num">95%</div>
+        <div class="stat-label" style="color: white;">Attendance Rate</div>
+      </div>
+      <div class="stat-card" style="background: var(--grad2); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-star"></i></div>
+        <div class="stat-num">A+</div>
+        <div class="stat-label" style="color: white;">Latest Grade</div>
+      </div>
+    </div>
+
+    <div class="features-grid fade-in visible">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#e8f0fd;color:#2557a7"><i class="fa fa-video"></i></div>
+        <h3>Upcoming Live Class</h3>
+        <p><strong>Physics 101</strong><br>Starts in 45 mins</p>
+        <button class="btn-enroll" style="margin-top: 12px; padding: 6px;">Join Now</button>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fff3d6;color:#b06000"><i class="fa fa-file-alt"></i></div>
+        <h3>Recent Exam Result</h3>
+        <p><strong>Midterm: Chemistry</strong><br>Score: 88/100</p>
+        <button class="btn-enroll" style="margin-top: 12px; padding: 6px;">View Details</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- ==================== TEACHER DASHBOARD ==================== -->
+  <ng-container *ngIf="user.role === 'Teacher'">
+    <div class="stats-grid fade-in visible" style="margin-bottom: 40px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="stat-card" style="background: linear-gradient(135deg, #5340b5, #a32d5c); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-users"></i></div>
+        <div class="stat-num">120</div>
+        <div class="stat-label" style="color: white;">Total Students</div>
+      </div>
+      <div class="stat-card" style="background: var(--grad3); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-calendar-alt"></i></div>
+        <div class="stat-num">3</div>
+        <div class="stat-label" style="color: white;">Classes Today</div>
+      </div>
+      <div class="stat-card" style="background: var(--grad2); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-tasks"></i></div>
+        <div class="stat-num">45</div>
+        <div class="stat-label" style="color: white;">Pending Assignments</div>
+      </div>
+    </div>
+
+    <div class="features-grid fade-in visible">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#e8f0fd;color:#2557a7"><i class="fa fa-chalkboard-teacher"></i></div>
+        <h3>Host Live Class</h3>
+        <p>Start your upcoming scheduled class for section A.</p>
+        <button class="btn-enroll" style="margin-top: 12px; padding: 6px;">Start Session</button>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#e1f5ee;color:#0a7c5a"><i class="fa fa-edit"></i></div>
+        <h3>Grade Submissions</h3>
+        <p>45 unread Creative Work submissions pending review.</p>
+        <button class="btn-enroll" style="margin-top: 12px; padding: 6px;">Start Grading</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- ==================== ADMIN DASHBOARD ==================== -->
+  <ng-container *ngIf="user.role === 'Admin'">
+    <div class="stats-grid fade-in visible" style="margin-bottom: 40px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="stat-card" style="background: var(--grad1); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-user-graduate"></i></div>
+        <div class="stat-num">1,250</div>
+        <div class="stat-label" style="color: white;">Enrolled Students</div>
+      </div>
+      <div class="stat-card" style="background: var(--grad2); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-chalkboard-teacher"></i></div>
+        <div class="stat-num">45</div>
+        <div class="stat-label" style="color: white;">Active Teachers</div>
+      </div>
+      <div class="stat-card" style="background: linear-gradient(135deg, #0a7c5a, #5ecdc9); color: white;">
+        <div class="stat-icon" style="color: white;"><i class="fa fa-wallet"></i></div>
+        <div class="stat-num">$12k</div>
+        <div class="stat-label" style="color: white;">Revenue (This Month)</div>
+      </div>
+    </div>
+
+    <div class="features-grid fade-in visible">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#e8f0fd;color:#2557a7"><i class="fa fa-user-plus"></i></div>
+        <h3>Manage Admissions</h3>
+        <p>Approve or reject new student admission applications.</p>
+        <button class="btn-enroll" style="margin-top: 12px; padding: 6px;">View Applications</button>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fff3d6;color:#b06000"><i class="fa fa-bullhorn"></i></div>
+        <h3>Publish Notice</h3>
+        <p>Create and broadcast a notice to all users in the academy.</p>
+        <button class="btn-enroll" style="margin-top: 12px; padding: 6px;">Create Notice</button>
+      </div>
+    </div>
+  </ng-container>
+</section>

@@ -1,0 +1,19 @@
+{
+  "students": [
+    { "id": 1, "firstName": "Zia", "lastName": "Ahmed", "email": "zia@example.com", "program": "Science" },
+    { "id": 2, "firstName": "Riya", "lastName": "Hossain", "email": "riya@example.com", "program": "Computer Science & IT" }
+  ],
+  "teachers": [
+    { "id": 1, "name": "Dr. Rahman Ahmed", "subject": "Physics & Mathematics", "experience": 18 },
+    { "id": 2, "name": "Ms. Sarah Khan", "subject": "Chemistry & Biology", "experience": 14 }
+  ],
+  "courses": [
+    { "id": 1, "title": "Science (Biology, Chemistry, Physics)", "students": 420, "duration": "3 Years" },
+    { "id": 2, "title": "Computer Science & IT Training", "students": 510, "duration": "2 Years" }
+  ],
+  "users": [
+    { "id": 1, "email": "admin@edupeak.com", "password": "password123", "role": "Admin", "name": "System Administrator" },
+    { "id": 2, "email": "teacher@edupeak.com", "password": "password123", "role": "Teacher", "name": "Dr. Rahman Ahmed" },
+    { "id": 3, "email": "student@edupeak.com", "password": "password123", "role": "Student", "name": "Zia Ahmed" }
+  ]
+}
