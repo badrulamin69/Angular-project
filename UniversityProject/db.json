@@ -1,0 +1,134 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Super Admin",
+      "email": "super@smartuni.edu",
+      "password": "password",
+      "role": "Super Admin"
+    },
+    {
+      "id": "2",
+      "name": "University Admin",
+      "email": "admin@smartuni.edu",
+      "password": "password",
+      "role": "University Admin"
+    },
+    {
+      "id": "3",
+      "name": "John Doe",
+      "email": "student@smartuni.edu",
+      "password": "password",
+      "role": "Student",
+      "universityId": "U1"
+    },
+    {
+      "id": "4",
+      "name": "Dr. Sarah",
+      "email": "faculty@smartuni.edu",
+      "password": "password",
+      "role": "Faculty Member",
+      "universityId": "U1"
+    }
+  ],
+  "universities": [
+    {
+      "id": "U1",
+      "name": "Global Tech University",
+      "location": "New York",
+      "status": "Active",
+      "totalStudents": 15000
+    }
+  ],
+  "departments": [
+    {
+      "id": "D1",
+      "name": "Computer Science",
+      "headId": "4",
+      "universityId": "U1"
+    }
+  ],
+  "courses": [
+    {
+      "id": "C1",
+      "code": "CS101",
+      "title": "Introduction to Algorithms",
+      "credits": 3,
+      "department": "Computer Science",
+      "status": "Active",
+      "enrolled": 120,
+      "capacity": 150
+    },
+    {
+      "id": "C2",
+      "code": "CS102",
+      "title": "Data Structures",
+      "credits": 3,
+      "department": "Computer Science",
+      "status": "Active",
+      "enrolled": 85,
+      "capacity": 85
+    },
+    {
+      "code": "222",
+      "title": "abc",
+      "credits": 4,
+      "department": "Computer Science",
+      "status": "Draft",
+      "enrolled": 0,
+      "capacity": 50,
+      "id": "DWh0zDi3DsI"
+    },
+    {
+      "code": "002",
+      "title": "Programming",
+      "credits": 4,
+      "department": "Computer Science",
+      "status": "Draft",
+      "enrolled": 0,
+      "capacity": 100,
+      "id": "bubXu5de3xk"
+    }
+  ],
+  "students": [
+    {
+      "id": "dbZguN2EI5k",
+      "name": "Abul Hasan",
+      "email": "abulhasan@gmail.com",
+      "program": "Business Admin",
+      "status": "Active",
+      "gpa": 0
+    },
+    {
+      "id": "6kPK6SQR8wI",
+      "name": "Tanvir",
+      "email": "tanvir@gmail.com",
+      "program": "Data Science",
+      "status": "Active",
+      "gpa": 0
+    }
+  ],
+  "enrollments": [],
+  "notifications": [
+    {
+      "id": "N1",
+      "userId": "3",
+      "message": "Your registration for Fall Semester is pending advisor approval.",
+      "read": false,
+      "timestamp": "2026-05-12T10:00:00Z"
+    }
+  ],
+  "systemStats": {
+    "totalUniversities": 42,
+    "totalStudents": 1250000,
+    "totalRevenue": 4500000,
+    "activeUsers": 89000
+  },
+  "invoices": [
+    { "id": "INV-001", "student": "Alice Smith", "date": "Oct 12, 2026", "amount": 4500.00, "status": "Paid" },
+    { "id": "INV-002", "student": "Bob Johnson", "date": "Oct 10, 2026", "amount": 4500.00, "status": "Pending" },
+    { "id": "INV-003", "student": "Charlie Davis", "date": "Sep 25, 2026", "amount": 3200.50, "status": "Overdue" },
+    { "id": "INV-004", "student": "Diana Prince", "date": "Oct 14, 2026", "amount": 1500.00, "status": "Paid" }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,103 @@
+<section class="py-24 bg-brand-light dark:bg-brand-dark animate-fade-in">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Transparent SaaS Pricing</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">Scale your digital infrastructure effortlessly. From small specialized academies to global multi-campus university networks.</p>
+      
+      <!-- Toggle -->
+      <div class="inline-flex items-center p-1 bg-slate-200 dark:bg-slate-800 rounded-xl hover:shadow-lg transition-all duration-300">
+        <button class="px-6 py-2 rounded-lg text-sm font-bold transition-all" [ngClass]="isAnnual ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm scale-105' : 'text-slate-500'" (click)="isAnnual = true">Annual (Save 20%)</button>
+        <button class="px-6 py-2 rounded-lg text-sm font-bold transition-all" [ngClass]="!isAnnual ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm scale-105' : 'text-slate-500'" (click)="isAnnual = false">Monthly</button>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Starter Plan -->
+      <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 animate-on-scroll delay-100 hover:-translate-y-2">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Starter Campus</h3>
+        <p class="text-slate-500 text-sm mb-6">Perfect for small colleges and single-faculty institutions.</p>
+        <div class="mb-6">
+          <span class="text-4xl font-extrabold text-slate-900 dark:text-white transition-all duration-500">${{isAnnual ? '499' : '599'}}</span>
+          <span class="text-slate-500 font-medium">/mo</span>
+        </div>
+        <button class="w-full py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors mb-8 hover:scale-[1.02]">Start Free Trial</button>
+        
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-500 animate-pulse"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Up to 5,000 Students
+          </li>
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Basic ERP & LMS
+          </li>
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Standard Reporting
+          </li>
+        </ul>
+      </div>
+
+      <!-- Professional Plan -->
+      <div class="rounded-3xl p-8 border-2 border-mit-red dark:border-primary-500 bg-white dark:bg-slate-800 shadow-2xl relative transform md:-translate-y-4 animate-on-scroll delay-200 hover:-translate-y-6 transition-all duration-300">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-mit-red text-white px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase animate-float">Most Popular</div>
+        
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Professional University</h3>
+        <p class="text-slate-500 text-sm mb-6">Complete ecosystem for mid-to-large universities.</p>
+        <div class="mb-6">
+          <span class="text-4xl font-extrabold text-slate-900 dark:text-white transition-all duration-500">${{isAnnual ? '1,499' : '1,799'}}</span>
+          <span class="text-slate-500 font-medium">/mo</span>
+        </div>
+        <button class="w-full py-3 rounded-xl bg-gradient-to-r from-mit-red to-primary-600 text-white font-bold hover:shadow-lg hover:shadow-primary-500/30 transition-all mb-8 hover:scale-[1.02]">Get Started</button>
+        
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200 text-sm font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mit-red dark:text-primary-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Up to 25,000 Students
+          </li>
+          <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200 text-sm font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mit-red dark:text-primary-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Advanced AI Analytics
+          </li>
+          <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200 text-sm font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mit-red dark:text-primary-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Live Class Integrations
+          </li>
+          <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200 text-sm font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mit-red dark:text-primary-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Financial Management Suite
+          </li>
+        </ul>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 animate-on-scroll delay-300 hover:-translate-y-2">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Enterprise Multi-Campus</h3>
+        <p class="text-slate-500 text-sm mb-6">Infinite scalability for massive university networks.</p>
+        <div class="mb-6">
+          <span class="text-4xl font-extrabold text-slate-900 dark:text-white">Custom</span>
+        </div>
+        <button class="w-full py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-bold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors mb-8 hover:scale-[1.02]">Contact Sales</button>
+        
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-900 dark:text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Unlimited Students
+          </li>
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-900 dark:text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Multi-Campus Control
+          </li>
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-900 dark:text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Dedicated Success Manager
+          </li>
+          <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-900 dark:text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Custom SLA & Deployment
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
