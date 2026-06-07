@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-login',
@@ -18,13 +19,10 @@ export class Login {
 
   private authService = inject(AuthService);
   private router = inject(Router);
+  private homeService = inject(HomeService);
 
-  // Provide credentials for demonstration to the user
-  demoAccounts = [
-    { role: 'Admin', email: 'admin@edupeak.com', pass: 'password123' },
-    { role: 'Teacher', email: 'teacher@edupeak.com', pass: 'password123' },
-    { role: 'Student', email: 'student@edupeak.com', pass: 'password123' },
-  ];
+  // demo accounts loaded from API to avoid hardcoded credentials
+  demoAccounts: any[] = [];
 
   fillDemo(email: string, pass: string) {
     this.email = email;
@@ -50,5 +48,9 @@ export class Login {
         this.errorMessage = err.message || 'Invalid credentials';
       }
     });
+  }
+
+  ngOnInit(): void {
+    this.homeService.getDemoAccounts().subscribe(res => this.demoAccounts = res || []);
   }
 }

@@ -26,9 +26,13 @@ export class AuthService {
       map(users => {
         if (users && users.length > 0) {
           const user = users[0];
-          localStorage.setItem('edupeak_user', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-          return user;
+          // generate a fake JWT token for the fake backend
+          const tokenPayload = { id: user.id, email: user.email, role: user.role, exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24) };
+          const token = btoa(JSON.stringify(tokenPayload));
+          const stored = { ...user, token };
+          localStorage.setItem('edupeak_user', JSON.stringify(stored));
+          this.currentUserSubject.next(stored);
+          return stored;
         } else {
           throw new Error('Invalid email or password');
         }

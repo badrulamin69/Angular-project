@@ -1,19 +1,184 @@
 {
-  "students": [
-    { "id": 1, "firstName": "Zia", "lastName": "Ahmed", "email": "zia@example.com", "program": "Science" },
-    { "id": 2, "firstName": "Riya", "lastName": "Hossain", "email": "riya@example.com", "program": "Computer Science & IT" }
+  "faculties": [
+    { "id": 1, "name": "Faculty of Science" },
+    { "id": 2, "name": "Faculty of Arts & Social Sciences" }
   ],
-  "teachers": [
-    { "id": 1, "name": "Dr. Rahman Ahmed", "subject": "Physics & Mathematics", "experience": 18 },
-    { "id": 2, "name": "Ms. Sarah Khan", "subject": "Chemistry & Biology", "experience": 14 }
+  "departments": [
+    { "id": 1, "facultyId": 1, "name": "Department of Physics" },
+    { "id": 2, "facultyId": 1, "name": "Department of Computer Science" },
+    { "id": 3, "facultyId": 2, "name": "Department of English" }
+  ],
+  "programs": [
+    { "id": 1, "departmentId": 2, "name": "BSc Computer Science", "durationYears": 4 },
+    { "id": 2, "departmentId": 1, "name": "BSc Physics", "durationYears": 4 }
+  ],
+  "batches": [
+    { "id": 1, "programId": 1, "name": "CS-2023" },
+    { "id": 2, "programId": 2, "name": "PHY-2023" }
+  ],
+  "semesters": [
+    { "id": 1, "batchId": 1, "name": "Semester 1", "active": true },
+    { "id": 2, "batchId": 1, "name": "Semester 2", "active": false }
   ],
   "courses": [
-    { "id": 1, "title": "Science (Biology, Chemistry, Physics)", "students": 420, "duration": "3 Years" },
-    { "id": 2, "title": "Computer Science & IT Training", "students": 510, "duration": "2 Years" }
+    { "id": 1, "programId": 1, "code": "CS101", "title": "Introduction to Programming", "description": "Learn the fundamentals of programming using Python, problem-solving, and algorithmic thinking.", "students": 420, "duration": "3 Years", "rating": "4.9", "tag": "Science", "tagBg": "#e8f0fd", "tagColor": "#2557a7", "gradient": "linear-gradient(135deg,#1a3c6e,#2557a7)", "emoji": "🔬" },
+    { "id": 2, "programId": 1, "code": "CS201", "title": "Data Structures", "description": "Build strong foundations in data structures, memory management, and efficient algorithms.", "students": 380, "duration": "3 Years", "rating": "4.8", "tag": "Commerce", "tagBg": "#e1f5ee", "tagColor": "#0a7c5a", "gradient": "linear-gradient(135deg,#0ea5a0,#2557a7)", "emoji": "📊" },
+    { "id": 3, "programId": 2, "code": "PH101", "title": "Mechanics", "description": "Explore the laws of motion, energy, and forces through hands-on physics experiments.", "students": 290, "duration": "3 Years", "rating": "4.7", "tag": "Arts", "tagBg": "#fceaf0", "tagColor": "#a32d5c", "gradient": "linear-gradient(135deg,#e8504a,#f4a724)", "emoji": "🎨" },
+    { "id": 4, "programId": 1, "code": "CS301", "title": "Computer Science & IT Training", "description": "Full-stack development, AI fundamentals, networking, and software engineering mastery.", "students": 510, "duration": "2 Years", "rating": "4.9", "tag": "Technology", "tagBg": "#e8f8fc", "tagColor": "#0e7490", "gradient": "linear-gradient(135deg,#1a2238,#0ea5a0)", "emoji": "💻" },
+    { "id": 5, "programId": 2, "code": "LG101", "title": "Language Courses", "description": "English, Arabic, French, Spanish, and Mandarin — from beginner to advanced certification level.", "students": 340, "duration": "1 Year", "rating": "4.8", "tag": "Language", "tagBg": "#f0eefd", "tagColor": "#5340b5", "gradient": "linear-gradient(135deg,#5340b5,#0ea5a0)", "emoji": "🌍" }
+  ],
+  "sections": [
+    { "id": 1, "courseId": 1, "name": "A", "capacity": 60 },
+    { "id": 2, "courseId": 2, "name": "A", "capacity": 50 }
+  ],
+  "students": [
+    { "id": 1, "firstName": "Zia", "lastName": "Ahmed", "email": "zia@example.com", "programId": 1, "batchId": 1 },
+    { "id": 2, "firstName": "Riya", "lastName": "Hossain", "email": "riya@example.com", "programId": 1, "batchId": 1 },
+    { "id": 3, "firstName": "Kabir", "lastName": "Islam", "email": "kabir@example.com", "programId": 2, "batchId": 2 }
+  ],
+  "enrollments": [
+    { "id": 1, "studentId": 1, "courseId": 1, "sectionId": 1, "semesterId": 1 },
+    { "id": 2, "studentId": 2, "courseId": 1, "sectionId": 1, "semesterId": 1 }
+  ],
+  "teachers": [
+    { "id": 1, "name": "Dr. Rahman Ahmed", "initials": "DR", "subject": "Physics & Mathematics", "exp": 18, "email": "rahman@edupeak.com", "departmentId": 1, "bg": "#e8f0fd", "color": "#2557a7", "borderColor": "#b5d4f4" },
+    { "id": 2, "name": "Ms. Sarah Khan", "initials": "SK", "subject": "Chemistry & Biology", "exp": 14, "email": "sarah@edupeak.com", "departmentId": 2, "bg": "#e1f5ee", "color": "#0a7c5a", "borderColor": "#9fe1cb" },
+    { "id": 3, "name": "Mr. Masud Hasan", "initials": "MH", "subject": "Computer Science & AI", "exp": 11, "email": "masud@edupeak.com", "departmentId": 2, "bg": "#fff3d6", "color": "#b06000", "borderColor": "#fac775" },
+    { "id": 4, "name": "Mrs. Nadia Islam", "initials": "NI", "subject": "English Literature", "exp": 16, "email": "nadia@edupeak.com", "departmentId": 3, "bg": "#fceaf0", "color": "#a32d5c", "borderColor": "#f4c0d1" },
+    { "id": 5, "name": "Mr. Kamal Roy", "initials": "KR", "subject": "Accounting & Business", "exp": 13, "email": "kamal@edupeak.com", "departmentId": 2, "bg": "#f0eefd", "color": "#5340b5", "borderColor": "#afa9ec" },
+    { "id": 6, "name": "Ms. Fariha Alam", "initials": "FA", "subject": "French & Arabic", "exp": 9, "email": "fariha@edupeak.com", "departmentId": 3, "bg": "#e8f8fc", "color": "#0e7490", "borderColor": "#85b7eb" }
   ],
   "users": [
-    { "id": 1, "email": "admin@edupeak.com", "password": "password123", "role": "Admin", "name": "System Administrator" },
-    { "id": 2, "email": "teacher@edupeak.com", "password": "password123", "role": "Teacher", "name": "Dr. Rahman Ahmed" },
-    { "id": 3, "email": "student@edupeak.com", "password": "password123", "role": "Student", "name": "Zia Ahmed" }
-  ]
+    { "id": 1, "email": "admin@edupeak.com", "password": "password123", "role": "SuperAdmin", "name": "System Administrator" },
+    { "id": 2, "email": "admin2@edupeak.com", "password": "password123", "role": "Admin", "name": "Admissions Admin" },
+    { "id": 3, "email": "teacher@edupeak.com", "password": "password123", "role": "Teacher", "name": "Dr. Rahman Ahmed" },
+    { "id": 4, "email": "student@edupeak.com", "password": "password123", "role": "Student", "name": "Zia Ahmed" }
+  ],
+  "employees": [
+    { "id": 1, "firstName": "Mina", "lastName": "Begum", "email": "mina@edupeak.com", "designation": "Accountant" }
+  ],
+  "applicants": [
+    { "id": 1, "firstName": "Arif", "lastName": "Chowdhury", "programApplied": 1, "status": "pending" }
+  ],
+  "exams": [
+    { "id": 1, "name": "Midterm - CS101", "courseId": 1, "date": "2026-07-15" }
+  ],
+  "marks": [
+    { "id": 1, "examId": 1, "studentId": 1, "marks": 85 }
+  ],
+  "fees": [
+    { "id": 1, "studentId": 1, "amount": 500, "status": "due" }
+  ],
+  "payments": [
+    { "id": 1, "studentId": 2, "amount": 500, "method": "card", "date": "2026-01-10" }
+  ],
+  "books": [
+    { "id": 1, "title": "Advanced Physics", "author": "A. Einstein", "category": "Physics", "availableCopies": 3 }
+  ],
+  "lessons": [
+    { "id": 1, "courseId": 1, "title": "Intro to Variables", "order": 1 }
+  ],
+  "assignments": [
+    { "id": 1, "courseId": 1, "title": "Assignment 1", "dueDate": "2026-04-01" }
+  ],
+  "quizzes": [
+    { "id": 1, "courseId": 1, "title": "Quiz 1" }
+  ],
+  "leaves": [
+    { "id": 1, "employeeId": 1, "from": "2026-03-01", "to": "2026-03-05", "status": "approved" }
+  ],
+  "payrolls": [
+    { "id": 1, "employeeId": 1, "month": "2026-03", "amount": 1200 }
+  ],
+  "notices": [
+    { "id": 1, "title": "Semester Registration", "body": "Registration opens from 1st June.", "date": "2026-05-20" }
+  ],
+  "roles": [
+    { "id": 1, "name": "SuperAdmin" },
+    { "id": 2, "name": "Admin" },
+    { "id": 3, "name": "Teacher" },
+    { "id": 4, "name": "Student" }
+  ],
+  "permissions": [
+    { "id": 1, "roleId": 1, "permission": "*" }
+  ],
+  "demoAccounts": [
+    { "role": "SuperAdmin", "email": "admin@edupeak.com", "pass": "password123" },
+    { "role": "Teacher", "email": "teacher@edupeak.com", "pass": "password123" },
+    { "role": "Student", "email": "student@edupeak.com", "pass": "password123" }
+  ],
+  "features": [
+    { "icon": "fa-user-graduate", "title": "Student Management", "desc": "Complete student profiles and academic history.", "bg": "#e8f0fd", "color": "#2557a7" },
+    { "icon": "fa-chalkboard-teacher", "title": "Teacher Management", "desc": "Manage teacher schedules and performance.", "bg": "#e1f5ee", "color": "#0a7c5a" },
+    { "icon": "fa-calendar-check", "title": "Attendance Tracking", "desc": "Digital attendance with automated notifications.", "bg": "#fff3d6", "color": "#b06000" },
+    { "icon": "fa-file-alt", "title": "Online Results", "desc": "Publish grades and track student progress online.", "bg": "#fceaf0", "color": "#a32d5c" },
+    { "icon": "fa-dollar-sign", "title": "Fee Management", "desc": "Collect fees, send reminders, and generate receipts.", "bg": "#ffe8e8", "color": "#a32d2d" },
+    { "icon": "fa-clock", "title": "Class Scheduling", "desc": "Build timetables and manage room assignments.", "bg": "#e8f8fc", "color": "#0e7490" },
+    { "icon": "fa-bullhorn", "title": "Notice Board", "desc": "Send instant announcements to students and parents.", "bg": "#f0eefd", "color": "#5340b5" },
+    { "icon": "fa-comments", "title": "Parent Communication", "desc": "Secure messaging and parent-teacher collaboration.", "bg": "#fff0e8", "color": "#b05000" }
+  ],
+  "stats": [
+    { "icon": "fa-users", "label": "Total Students Enrolled", "target": 5200, "suffix": "+" },
+    { "icon": "fa-chalkboard-teacher", "label": "Expert Teaching Faculty", "target": 120, "suffix": "+" },
+    { "icon": "fa-book-open", "label": "Active Courses Available", "target": 48, "suffix": "" },
+    { "icon": "fa-trophy", "label": "Annual Success Rate", "target": 98, "suffix": "%" }
+  ],
+  "testimonials": [
+    { "id": 1, "name": "Zia Ahmed", "role": "Parent — Grade 10 Student", "text": "Academy Management System completely transformed my son's academic trajectory. The teachers genuinely care about every student's success, and the digital management system keeps us informed about everything in real time.", "initials": "ZA", "bg": "#e8f0fd", "color": "#2557a7" },
+    { "id": 2, "name": "Riya Hossain", "role": "Student — CS Batch 2024", "text": "The Computer Science program here is exceptional. I landed a software engineering internship before even graduating thanks to the industry-relevant curriculum and supportive mentors.", "initials": "RH", "bg": "#e1f5ee", "color": "#0a7c5a" },
+    { "id": 3, "name": "Selina Mahmud", "role": "Parent — Grade 8 Student", "text": "As a parent, the transparency this academy provides is unmatched. Attendance, grades, fees — everything is accessible from my phone.", "initials": "SM", "bg": "#fff3d6", "color": "#b06000" },
+    { "id": 4, "name": "Tanvir Khan", "role": "Alumni — BUET Scholar 2023", "text": "I scored a full scholarship to BUET after studying science here. The faculty's dedication and the disciplined academic environment gave me the foundation to achieve my dreams.", "initials": "TK", "bg": "#f0eefd", "color": "#5340b5" },
+    { "id": 5, "name": "Nafisa Begum", "role": "Student — French Advanced", "text": "The language courses at Academy Management System are phenomenal! In just 8 months I became conversational in French.", "initials": "NB", "bg": "#fceaf0", "color": "#a32d5c" },
+    { "id": 6, "name": "Kabir Islam", "role": "Parent — Commerce Department", "text": "The commerce program prepared my daughter with real-world business skills. She started her own small business at age 17!",
+      "initials": "KI", "bg": "#e8f8fc", "color": "#0e7490" }
+  ],
+  "contactItems": [
+    { "icon": "fa-location-dot", "label": "Our Address", "value": "123 Education Avenue, Gulshan-2<br>Dhaka-1212, Bangladesh", "bg": "#e8f0fd", "color": "#2557a7" },
+    { "icon": "fa-phone", "label": "Phone Numbers", "value": "+880 1711-234567 (Admissions)<br>+880 2-9871234 (Main Office)", "bg": "#e1f5ee", "color": "#0a7c5a" },
+    { "icon": "fa-envelope", "label": "Email Address", "value": "admissions@edupeak.edu.bd<br>info@edupeak.edu.bd", "bg": "#fff3d6", "color": "#b06000" },
+    { "icon": "fa-clock", "label": "Office Hours", "value": "Sunday – Thursday: 8:00 AM – 5:00 PM<br>Saturday: 9:00 AM – 1:00 PM", "bg": "#f0eefd", "color": "#5340b5" }
+  ],
+  "homepage": [
+    {
+      "id": 1,
+      "heroBadge": "#1 Rated Academy Management Platform",
+      "heroTitle": "Smart <span>Academy</span><br>Management System",
+      "heroSubtitle": "Empower your institution with a complete digital ecosystem — managing students, teachers, attendance, results, and communication in one unified platform.",
+      "heroPrimaryCta": "Get Started Free",
+      "heroSecondaryCta": "Explore Courses",
+      "heroDashboardTitle": "Academy Dashboard",
+      "heroStats": [
+        { "label": "Students Enrolled", "value": "5,200+" },
+        { "label": "Success Rate", "value": "98%" },
+        { "label": "Expert Teachers", "value": "120+" }
+      ],
+      "heroProgress": [
+        { "label": "Science Department", "value": 92, "colorClass": "pf-blue" },
+        { "label": "Attendance Rate", "value": 96, "colorClass": "pf-teal" },
+        { "label": "Fee Collection", "value": 88, "colorClass": "pf-gold" }
+      ],
+      "heroMiniCards": [
+        { "icon": "fa-users", "value": "5.2K", "label": "Students", "bg": "#e8f0fd", "color": "#2557a7" },
+        { "icon": "fa-graduation-cap", "value": "120", "label": "Teachers", "bg": "#fff3d6", "color": "#b06000" }
+      ],
+      "about": {
+        "tag": "About Academy Management System",
+        "title": "Shaping Tomorrow's Leaders Today",
+        "paragraph1": "Academy Management System is a forward-thinking educational institution committed to providing world-class education through innovative technology and dedicated mentorship. Founded in 2005, we have consistently delivered excellence in academics and character development.",
+        "paragraph2": "Our smart academy management system streamlines every administrative and academic function — from enrollment to graduation — enabling teachers to focus on what truly matters: inspiring students to reach their full potential.",
+        "established": "Established 2005",
+        "activeStudents": "5,200+ Active Students",
+        "mission": { "title": "Our Mission", "description": "To empower every student with knowledge, skills, and values needed to thrive in a rapidly evolving world through inclusive, technology-enabled education." },
+        "vision": { "title": "Our Vision", "description": "To be the leading educational institution that redefines learning boundaries and cultivates a global community of lifelong learners and innovators." }
+      },
+      "admission": {
+        "badge": "🎓 Admissions 2025–26",
+        "title": "Admissions Are Open Now!",
+        "subtitle": "Join thousands of students who have transformed their futures with Academy Management System. Seats are limited — secure your place today.",
+        "cta": "Apply Now — It's Free"
+      },
+      "contactMapLabel": "Google Maps — Gulshan-2, Dhaka"
+    }
+  ],
+  "enquiries": []
 }
